@@ -1,0 +1,26 @@
+.heroTitle {
+  font-weight: 800;
+  line-height: 24px;
+  font-size: 20px;
+  padding-top: 24px;
+  padding-left: 24px;
+  margin-bottom: 4px;
+}
+.aboutHero {
+  line-height: 28px;
+  padding-left: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+
+}
+.heroCard {
+  background-color: #ffffff;
+  width: 334px;
+  height: 409px;
+  border: 1px solid #DEE2E6;
+  border-radius: 4px;
+  overflow: scroll;
+ 
+}
+

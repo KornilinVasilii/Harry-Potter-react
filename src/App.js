@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Header } from "./components/Header/Header";
+import { Main } from "./components/Main/Main";
+import { data } from "./components/Cards/hp";
+import { useState } from "react";
 
 function App() {
+  const [hero, setHero] = useState(data);
+  const [house, setHouse] = useState('');
+
+  //Поиск                           
+
+  function searchHero(event) {
+    const hero = data
+      .filter((el) =>
+        el.name.toLowerCase().includes(event.target.value.trim().toLowerCase()))
+  
+    setHero(hero);   
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Main
+        hero={hero}
+        house={house}
+        searchHero={searchHero}
+        setHouse={setHouse} />
+    </>
   );
 }
 
